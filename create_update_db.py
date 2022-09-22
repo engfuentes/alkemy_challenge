@@ -16,7 +16,7 @@ def create_update_db(tables):
     DATABASE_NAME = config("DATABASE_NAME")
 
     # Create the database
-    engine = db.create_engine(f"postgresql://postgres:Riquelme#10@localhost:5432", echo=True)
+    engine = db.create_engine(f"postgresql://postgres:{DATABASE_PASSWORD}@localhost:5432", echo=True)
     conn = engine.connect()
 
     conn.execute("commit")
